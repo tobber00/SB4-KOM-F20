@@ -31,7 +31,7 @@ public class LifePart implements EntityPart {
         this.life = life;
     }
 
-    public boolean isIsHit() {
+    public boolean isHit() {
         return isHit;
     }
 
