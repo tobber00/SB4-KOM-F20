@@ -19,27 +19,11 @@ public class AsteroidControlSystem implements IEntityProcessingService {
     @Override
     public void process(GameData gameData, World world) {
 
-        /*
-        for (Entity asteroid : world.getEntities(Asteroid.class)) {
-            PositionPart positionPart = asteroid.getPart(PositionPart.class);
-            MovingPart movingPart = asteroid.getPart(MovingPart.class);
-
-            movingPart.setUp(true);
-
-            movingPart.process(gameData, asteroid);
-            positionPart.process(gameData, asteroid);
-
-            setShape(asteroid, 12);
-        }
-
-         */
-
         for (Entity asteroid : world.getEntities(Asteroid.class)) {
             PositionPart positionPart = asteroid.getPart(PositionPart.class);
             MovingPart movingPart = asteroid.getPart(MovingPart.class);
             LifePart lifePart = asteroid.getPart(LifePart.class);
 
-            int numPoints = 12;
             movingPart.setUp(true);
 
             movingPart.process(gameData, asteroid);
@@ -51,11 +35,11 @@ public class AsteroidControlSystem implements IEntityProcessingService {
             }
 
              */
-            setShape(asteroid, numPoints);
+            setShape(asteroid);
         }
     }
 
-    private void setShape(Entity entity, int numPoints) {
+    private void setShape(Entity entity) {
 
 
         float[] shapex = entity.getShapeX();
